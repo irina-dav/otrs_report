@@ -8,10 +8,11 @@ class Article:
         self.date = date
         self.text = text
 
-
     def __str__(self):
-        return '{0}, {1}, {2}:\r\n{3}'.format(self.article_id, self.date.strftime(datetime_fmt), self.agent, self.text)
-
+        return '{0}, {1}, {2}:\r\n{3}'.format(
+            self.article_id, self.date.strftime(datetime_fmt),
+            self.agent, self.text)
 
     def report(self):
-        return '[{1}, {2}] {0}'.format(self.text, self.date.strftime(datetime_fmt), self.agent)
+        return '[{1}, {2}] {0}'.format(
+            self.text, self.date.strftime(datetime_fmt), self.agent)
