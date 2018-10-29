@@ -21,5 +21,5 @@ attr_search = {
     'StateType': 'closed',
 }
 
-otrs_url = 'https://otrs.domen.com/otrs/index.pl'
+otrs_url = 'https://otrs.domain.com/otrs/index.pl'
 report_path = 'd://temp//report.html'
