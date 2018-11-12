@@ -73,6 +73,8 @@ def search_by_pages(attr_search):
     soup = bs4.BeautifulSoup(response.text, 'html.parser')
     pages = soup.find_all(
         "a", id=lambda v: v and v.startswith("AgentTicketSearchPage"))
+    if not pages:
+        pages.append("page1")
     for page_num, _ in enumerate(pages):
         ticket_ids.extend(search_tickets_ids(page_num, attr_search))
     return ticket_ids
@@ -170,6 +172,8 @@ def configure_search(sys_args):
     attr_search = config.attr_search
     if len(sys.argv) > 1:
         attr_search['TicketCloseTimePoint'] = sys.argv[1]
+    else:
+        attr_search['TicketCloseTimePoint'] = 1
     return attr_search
 
 
